@@ -1,7 +1,7 @@
 public class Student
 {
     private String name; //instance field
-    private String studentID;
+    private String studentID; //instance field
 
 
     public Student(){
