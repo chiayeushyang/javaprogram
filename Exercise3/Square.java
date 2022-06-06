@@ -19,7 +19,7 @@ public class Square {
     }
 
 
-    public static void main (Sting [] args) {
+    public static void main (String [] args) {
         
     }
 }
