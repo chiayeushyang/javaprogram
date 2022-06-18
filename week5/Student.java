@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Student {
@@ -86,13 +87,25 @@ public class Student {
         // kyb.close();
 
         /*------------------------------------------------------------------------------------ */
-            Student stud = new Student("Alicia Tan", "A1234");
-            Student stud1 = new Student("Albert Lee", "A1235");
-            Student stud2 = new Student("Jen Li", "A1236");
-            displayName(stud);
-            displayName(stud, stud1);
-            displayName(stud, stud1, stud2);
-            System.out.println("Sum value is " + sum(1,2,3,4,5,6,7,8,9,10));
-            System.out.println("Sum value is " + sum(1,2,3,4,5));
+            // Student stud = new Student("Alicia Tan", "A1234");
+            // Student stud1 = new Student("Albert Lee", "A1235");
+            // Student stud2 = new Student("Jen Li", "A1236");
+            // displayName(stud);
+            // displayName(stud, stud1);
+            // displayName(stud, stud1, stud2);
+            // System.out.println("Sum value is " + sum(1,2,3,4,5,6,7,8,9,10));
+            // System.out.println("Sum value is " + sum(1,2,3,4,5));
+
+        /* ----------------------------------------------------------------------------------- */
+
+            Student [] studArray = new Student[3];
+            studArray[0] = new Student("Alicia Tan", "A1234");
+            studArray[1] = new Student("Albert Lee", "A1235");
+            studArray[2]= new Student("Jen Li", "A1236");
+            displayName(studArray);
+
+            ArrayList <Student> nameList = new ArrayList<Student>();
+            nameList.add(studArray[0]);
+            nameList.add(new Student());
     }
 }
