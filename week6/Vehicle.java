@@ -54,7 +54,7 @@ public class Vehicle {
     int gear;
     Car (String brandName, String modelName) {
         //System.out.println("super() must be the first line");
-        super(brandName, modelName);
+        // super(brandName, modelName);
         System.out.println("Noooooo");
     }
 
