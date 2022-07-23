@@ -1,5 +1,6 @@
 import javax.swing.*;
 import java.awt.event.*;
+import java.awt.Color;
 import java.util.Random;
 import java.util.function.IntSupplier;
 import java.util.Random;
@@ -55,13 +56,15 @@ public class guessNumber extends JFrame{
 
                 if (randomNum == guessNumber){
                     lableResult.setText("Congratulations, You are correct!");
+                    lableResult.setForeground(Color.green);
                     input.setEditable(false);
 
                 } else if (randomNum > guessNumber){
                     lableResult.setText("Too Low, try a higher number");
-
+                    lableResult.setForeground(Color.red);
                 } else {
                     lableResult.setText("Too High, try a lower number");
+                    lableResult.setForeground(Color.red);
                 }
 
             } catch (Exception ex) {
