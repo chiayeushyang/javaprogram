@@ -9,7 +9,6 @@ public class tempConversion{
     private JLabel lableResult= new JLabel();
     private JPanel panel;
     private JTextField input;
-    private JButton calcButton;
     
     tempConversion() {
         
@@ -19,7 +18,6 @@ public class tempConversion{
         window.setTitle("Temperature Converter");
         window.setSize(WINDOW_WIDTH,  WINDOW_HEIGHT);
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
-   
 
         message = new JLabel("Enter Fahrenheit Temperature: ");
         input = new JTextField(20);
