@@ -77,7 +77,8 @@ class frame extends JFrame {
         public void actionPerformed(ActionEvent e) {
             String color;
 
-            labelFrame labelColor = new labelFrame(lableText.getText());
+            labelFrame labelColor = new labelFrame();
+            labelColor.setText(lableText.getText());
 
             color = (String) colorBox.getSelectedItem();
 
