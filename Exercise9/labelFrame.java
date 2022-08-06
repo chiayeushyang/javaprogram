@@ -2,10 +2,6 @@ import java.awt.*;
 import java.awt.Color;
 import java.awt.event.*;
 import javax.swing.*;
-import javax.xml.transform.Source;
-
-import javafx.scene.effect.ColorAdjust;
-
 import java.io.Serializable;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;

@@ -1,8 +1,6 @@
 import javax.swing.*;
-
 import java.io.FileInputStream;
 import java.io.ObjectInputStream;
-
 import java.awt.*;
 import java.awt.Color;
 import java.awt.event.*;
@@ -57,7 +55,7 @@ public class readLabelFrame extends JFrame{
             }
          }
     }
- 
+
     public static void main(String[] args) {
         new readLabelFrame();
     }
