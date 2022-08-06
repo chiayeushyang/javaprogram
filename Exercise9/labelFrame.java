@@ -1,6 +1,11 @@
 import java.awt.*;
+import java.awt.Color;
 import java.awt.event.*;
 import javax.swing.*;
+import javax.xml.transform.Source;
+
+import javafx.scene.effect.ColorAdjust;
+
 import java.io.Serializable;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -83,20 +88,20 @@ class frame extends JFrame {
             color = (String) colorBox.getSelectedItem();
 
             switch (color) {
-                case "RED" : labelColor.setForeground(Color.RED); break;
-                case "BLUE": labelColor.setForeground(Color.BLUE); break;
-                case "GREEN": labelColor.setForeground(Color.GREEN); break;
-                case "YELLOW":labelColor.setForeground(Color.YELLOW); break;
+                case "Red" : labelColor.setForeground(Color.RED); break;
+                case "Blue": labelColor.setForeground(Color.BLUE); break;
+                case "Green": labelColor.setForeground(Color.GREEN); break;
+                case "Yellow":labelColor.setForeground(Color.YELLOW); break;
             }
 
-            try {
-                FileOutputStream outputStream = new FileOutputStream("labelColor.dat");
+            try {  
+                FileOutputStream outputStream = new FileOutputStream("Objects.dat");
                 ObjectOutputStream objectOutputStream = new ObjectOutputStream(outputStream);
                 objectOutputStream.writeObject(labelColor);
                 objectOutputStream.close();
 
             } catch (Exception ex) {
-                 JOptionPane.showMessageDialog(null, "Erroc Occuranced", "Warning", JOptionPane.WARNING_MESSAGE);
+                 JOptionPane.showMessageDialog(null, "Erroc Occuranced", "Oops something wrong", JOptionPane.WARNING_MESSAGE);
             }
         }
 
