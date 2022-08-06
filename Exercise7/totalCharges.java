@@ -70,7 +70,7 @@ public class totalCharges extends JFrame {
             implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            String room, plan, customer;; 
+            String room, plan, customer;
             double total = 0; 
 
             customer = customerNumber.getText();
