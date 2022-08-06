@@ -100,7 +100,5 @@ class frame extends JFrame {
                  JOptionPane.showMessageDialog(null, "Erroc Occuranced", "Oops something wrong", JOptionPane.WARNING_MESSAGE);
             }
         }
-
     }
-
 }
