@@ -2,9 +2,9 @@
 // Set up a Server that will receive a connection from a client, send 
 // a string to the client, and close the connection.
 import java.io.*;
-import java.util.Random;
 import java.net.*;
 import java.awt.*;
+import java.util.Random;
 import java.awt.event.*;
 import javax.swing.*;
      
@@ -15,7 +15,7 @@ import javax.swing.*;
        private ObjectInputStream input;
        private ServerSocket server;
        private Socket connection;  
-       private int counter = 1;
+       private int counter = 1, upperBound = 10, guessTime, luckyNum;
     
       // set up GUI
       public Server()
@@ -46,11 +46,34 @@ import javax.swing.*;
          container.add( new JScrollPane( displayArea ), 
             BorderLayout.CENTER );
     
-          setSize( 300, 150 );
+         randomNum();
+         setSize( 300, 150 );
          setVisible( true );
    
        } // end Server constructor
     
+       //Create Random Number 
+       public void randomNum() {
+         Random rand = new Random();
+         luckyNum = rand.nextInt(upperBound) + 1;
+         guessTime = 0; 
+       }
+
+       public void checkGuess(int guessNum){
+         guessTime ++;
+         if (guessNum > upperBound || guessNum < 1) {
+            sendData("Please guess value between 1-10");
+         }else if (guessNum < luckyNum) {
+            sendData("Nice try, wrong guess, try a larger number");
+         }else if (guessNum > luckyNum) {
+            sendData("Nice try, wrong guess, try a smaller number");
+         }else if (guessNum == luckyNum) {
+            sendData("You have a nice guess\n\nTotal guess: " + guessTime +"\n\nStart a new game\n");
+            randomNum();
+         }
+       }
+
+
        // set up and run server 
        public void runServer()
        {
@@ -74,8 +97,8 @@ import javax.swing.*;
                 }
    
                 finally {
-                   //closeConnection();   // Step 5: Close connection.
-                  //++counter;
+                  //  closeConnection();   // Step 5: Close connection.
+                  // ++counter;
                }
 
           } // end try
@@ -117,7 +140,7 @@ import javax.swing.*;
      private void processConnection() throws IOException
      {
         // send connection successful message to client
-        String message = "Connection successful";
+        String message = "Connection successful \n Guess a number between 1-10";
         sendData( message );
  
         // enable enterField so server user can send messages
@@ -129,6 +152,7 @@ import javax.swing.*;
            try {
               message = ( String ) input.readObject();
              displayMessage( "\n" + message );
+             checkGuess(Integer.parseInt(message.substring(10)));
            }
   
            // catch problems reading from client

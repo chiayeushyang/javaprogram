@@ -43,6 +43,7 @@ import javax.swing.*;
     
          // create displayArea
           displayArea = new JTextArea();
+          displayArea.setEditable(false);
          container.add( new JScrollPane( displayArea ),
             BorderLayout.CENTER );
     
